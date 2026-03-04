@@ -1,0 +1,222 @@
+@font-face {
+  font-family: 'Space Mono';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacemono/v17/i7dNIFZifjKcF5UAWdDRYER8QA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacemono/v17/i7dSIFZifjKcF5UAWdDRYERE_FeaGw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRUEY.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacemono/v17/i7dMIFZifjKcF5UAWdDRaPpZYFI.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hidden {
+  display: none !important;
+}
+html {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: #5e7a7d;
+}
+body {
+  min-height: 100vh;
+  gap: 2rem;
+  background-color: #c5e4e7;
+}
+body,
+body #container,
+body main.calculator,
+body main.calculator .calculation,
+body main.calculator .result {
+  display: flex;
+  flex-direction: column;
+}
+body,
+body #container {
+  align-items: center;
+  justify-content: center;
+}
+body #container {
+  width: 100%;
+  gap: 2rem;
+}
+body #container header.splitter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 24px;
+  color: #3d6666;
+  letter-spacing: 0.5rem;
+}
+body #container main.calculator {
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 23.5rem;
+  gap: 2rem;
+  background-color: white;
+  border-radius: 15px;
+}
+body #container main.calculator .calculation {
+  width: 100%;
+  gap: 2rem;
+}
+body #container main.calculator .calculation .percentage-container {
+  width: 100%;
+}
+body #container main.calculator .calculation .percentage-container ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  list-style: none;
+}
+body #container main.calculator .calculation .percentage-container ul li {
+  width: 100%;
+}
+body #container main.calculator .calculation .percentage-container ul li button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  background-color: #00494d;
+}
+body #container main.calculator .calculation .percentage-container ul li button:hover {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button {
+  background-color: #f4fafb;
+  color: #547878;
+}
+body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button:hover,
+body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button:active,
+body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button:focus,
+body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button:focus-visible {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+body #container main.calculator .result {
+  padding: 1.5rem;
+  background-color: #00474b;
+  gap: 2rem;
+  border-radius: 15px;
+}
+body #container main.calculator .result,
+body #container main.calculator .result .sums {
+  display: flex;
+  flex-direction: column;
+}
+body #container main.calculator .result .sums {
+  gap: 1.5rem;
+}
+body #container main.calculator .result .sums .tip,
+body #container main.calculator .result .sums .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+body #container main.calculator .result .sums .tip .wording-container > p:first-child,
+body #container main.calculator .result .sums .total .wording-container > p:first-child {
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+body #container main.calculator .result .sums .tip .wording-container > p:last-child,
+body #container main.calculator .result .sums .total .wording-container > p:last-child {
+  font-size: 13px;
+  line-height: 19px;
+}
+body #container main.calculator .result .sums .tip > p,
+body #container main.calculator .result .sums .total > p {
+  font-size: 32px;
+  line-height: 47px;
+  color: #26c0ab;
+}
+body #container main.calculator .result button {
+  padding: 0.5rem 2rem;
+  background-color: #26c0ab;
+  color: #00494d;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 30px;
+}
+body #container main.calculator .result button:disabled {
+  color: #085c61;
+  background-color: #0d686d;
+}
+body #container main.calculator .result button:hover {
+  background-color: #9fe8df;
+}
+body #container main.calculator .input-container {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: #f3f9fa;
+  border-radius: 5px;
+}
+body #container main.calculator .input-container label {
+  display: flex;
+}
+body #container label {
+  display: block;
+}
+body #container .main-label {
+  margin-bottom: 0.5rem;
+}
+body #container input,
+body #container button {
+  font-family: 'Space Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+body #container input {
+  width: 100%;
+  color: #00494d;
+  background-color: #f3f9fa;
+  border: none;
+  text-align: right;
+  font-size: 24px;
+}
+body #container input:hover,
+body #container input:active,
+body #container input:focus,
+body #container input:focus-visible {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+body #container button {
+  border: none;
+  border-radius: 5px;
+}
+body #container button:hover {
+  cursor: pointer;
+}
+body #container img.icon {
+  max-width: 20px;
+}
+body #container img.icon:hover {
+  cursor: pointer;
+}

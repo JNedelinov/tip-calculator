@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@green-900: #00494d;
+@green-800: #085c61;
+@green-750: #0d686d;
+@green-400: #26c0ab;
+@green-200: #9fe8df;
+
+@grey-600: #3d6666;
+@grey-550: #547878;
+@grey-500: #5e7a7d;
+@grey-400: #7f9c9f;
+@grey-300: #9ebbbd;
+@grey-200: #c5e4e7;
+@grey-50: #f4fafb;
+
+@orange-200: #e17052;
+
+@font-family: 'Space Mono', monospace;
+
+@white: #ffffff;
+@black: #000000;
+
+@tp1-size: 46px;
+@tp1-l-height: 71px;
+@tp1-l-spacing: -1px;
+
+@tp2-size: 32px;
+@tp2-l-height: 47px;
+@tp2-l-spacing: -0.67px;
+
+@tp3-size: 24px;
+@tp3-l-height: 36px;
+
+@tp4-size: 20px;
+@tp4-l-height: 30px;
+
+@tp5-size: 16px;
+@tp5-l-height: 24px;
+
+@tp6-size: 13px;
+@tp6-l-height: 19px;
+
+@spacing-0: 0px;
+@spacing-0: 0px;
+@spacing-0: 0px;
+@spacing-0: 0px;
+@spacing-0: 0px;
+@spacing-0: 0px;
+@spacing-1000: 80px;
+@spacing-1200: 96px;
+@spacing-1500: 120px;
+@spacing-1600: 128px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// TODO: uncomment
+.hidden {
+  display: none !important;
+}
+
+html {
+  font-family: @font-family;
+  font-weight: 700;
+  color: @grey-500;
+}
+
+body {
+  // TODO: uncomment this for better
+  // padding: 2rem 0;
+  min-height: 100vh;
+  gap: 2rem;
+
+  background-color: #c5e4e7;
+
+  &,
+  #container,
+  main.calculator,
+  main.calculator .calculation,
+  main.calculator .result {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &,
+  #container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  #container {
+    width: 100%;
+    gap: 2rem;
+
+    header.splitter {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      font-size: @tp3-size;
+      color: @grey-600;
+      letter-spacing: 0.5rem;
+    }
+
+    main.calculator {
+      padding: 2rem 1.5rem;
+      width: 100%;
+      max-width: 23.5rem;
+      gap: 2rem;
+      background-color: white;
+      border-radius: 15px;
+
+      .calculation {
+        width: 100%;
+        gap: 2rem;
+
+        .percentage-container {
+          width: 100%;
+
+          ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            list-style: none;
+
+            li {
+              width: 100%;
+
+              button {
+                width: 100%;
+                padding: 0.5rem 1rem;
+
+                color: @white;
+                background-color: @green-900;
+
+                &:hover {
+                  background-color: @green-400;
+                  color: @green-900;
+                }
+              }
+
+              &:nth-child(6) > button {
+                background-color: @grey-50;
+                color: @grey-550;
+
+                // TODO: add hover effects on the custom button
+                &:hover,
+                &:active,
+                &:focus,
+                &:focus-visible {
+                  background-color: @green-400;
+                  color: @green-900;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .result {
+        padding: 1.5rem;
+        background-color: #00474b;
+
+        gap: 2rem;
+        border-radius: 15px;
+
+        &,
+        .sums {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .sums {
+          gap: 1.5rem;
+
+          .tip,
+          .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+          }
+
+          .tip .wording-container,
+          .total .wording-container {
+            & > p:first-child {
+              font-size: @tp5-size;
+              line-height: @tp5-l-height;
+              color: @white;
+            }
+
+            & > p:last-child {
+              font-size: @tp6-size;
+              line-height: @tp6-l-height;
+              @color: @grey-400;
+            }
+          }
+
+          .tip > p,
+          .total > p {
+            font-size: @tp2-size;
+            line-height: @tp2-l-height;
+            color: @green-400;
+          }
+        }
+
+        button {
+          padding: 0.5rem 2rem;
+          background-color: @green-400;
+          color: @green-900;
+          text-transform: uppercase;
+
+          font-size: @tp4-size;
+          line-height: @tp4-l-height;
+
+          // !! NEW THING ** styling :disabled
+          &:disabled {
+            color: @green-800;
+            background-color: @green-750;
+          }
+
+          &:hover {
+            background-color: @green-200;
+          }
+        }
+      }
+
+      .input-container {
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        background-color: #f3f9fa;
+        border-radius: 5px;
+
+        label {
+          display: flex;
+        }
+      }
+    }
+
+    label {
+      display: block;
+    }
+
+    .main-label {
+      margin-bottom: 0.5rem;
+    }
+
+    input,
+    button {
+      font-family: @font-family;
+      font-size: @tp3-size;
+      font-weight: 700;
+      line-height: @tp3-l-height;
+    }
+
+    input {
+      width: 100%;
+      color: @green-900;
+      background-color: #f3f9fa;
+      border: none;
+      text-align: right;
+      font-size: 24px;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:focus-visible {
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+
+    button {
+      border: none;
+      border-radius: 5px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    img.icon {
+      max-width: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
