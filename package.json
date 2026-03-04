@@ -1,0 +1,18 @@
+{
+  "name": "tip-calculator-app",
+  "version": "1.0.0",
+  "description": "Frontend Mentor Challenge - Tip Calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-css": "npx less-watch-compiler"
+  },
+  "keywords": [],
+  "author": "JNedelinov",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "less": "^4.5.1",
+    "less-watch-compiler": "^1.17.5"
+  }
+}
