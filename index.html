@@ -30,15 +30,25 @@
   </head>
   <body>
     <div id="container">
-      <header class="splitter">SPLI<span>TTER</span></header>
+      <header class="splitter"><span>SPLI</span><span>TTER</span></header>
 
       <main class="calculator">
         <div class="calculation">
-          <div class="bill">
-            <label for="bill">Bill</label>
-            <input type="text" name="bill" class="icon" />
+          <div class="bill-container">
+            <label for="bill" class="main-label">Bill</label>
+            <div class="input-container">
+              <!-- !! NEW THING - **draggable -->
+              <label for="bill"
+                ><img
+                  class="icon"
+                  src="./images/icon-dollar.svg"
+                  alt=""
+                  draggable="false"
+              /></label>
+              <input type="text" name="bill" id="bill" placeholder="0" />
+            </div>
           </div>
-          <div class="percentage">
+          <div class="percentage-container">
             <p>Select Tip %</p>
             <ul>
               <li>
@@ -61,18 +71,68 @@
               </li>
             </ul>
           </div>
-          <div class="number-ppl">
-            <label for="number-ppl">Number of People</label>
-            <input type="text" name="number-ppl" class="icon" />
+          <div class="custom-percentage-container hidden">
+            <label for="custom-percentage" class="main-label">Custom %</label>
+            <div class="input-container">
+              <!-- !! NEW THING - **draggable -->
+              <label for="custom-percentage"
+                ><img
+                  class="icon"
+                  src="./images/icon-percentage.svg"
+                  alt=""
+                  draggable="false"
+              /></label>
+              <input
+                type="text"
+                name="custom-percentage"
+                id="custom-percentage"
+                placeholder="0"
+              />
+            </div>
+          </div>
+
+          <div class="number-ppl-container">
+            <label for="number-ppl" class="main-label">Number of People</label>
+            <div class="input-container">
+              <!-- !! NEW THING - ** draggable -->
+              <label for="number-ppl"
+                ><img
+                  class="icon"
+                  src="./images/icon-person.svg"
+                  alt=""
+                  draggable="false"
+              /></label>
+              <input
+                type="text"
+                name="number-ppl"
+                id="number-ppl"
+                placeholder="0"
+              />
+            </div>
           </div>
         </div>
 
         <div class="result">
-          <div class="tip">Tip Amount / person</div>
+          <div class="sums">
+            <div class="tip">
+              <div class="wording-container">
+                <p>Tip Amount</p>
+                <p>/ person</p>
+              </div>
+              <p class="tip-sum">$0.00</p>
+            </div>
 
-          <div class="total">Total / person</div>
+            <div class="total">
+              <div class="wording-container">
+                <p>Total</p>
+                <p>/ person</p>
+              </div>
+              <p class="total-sum">$0.00</p>
+            </div>
+          </div>
 
           <button type="button">Reset</button>
+          <!-- <button type="button" disabled>Reset</button> -->
         </div>
       </main>
     </div>
