@@ -60,6 +60,7 @@ body #container {
 body #container {
   width: 100%;
   gap: 2rem;
+  padding: 2rem;
 }
 body #container header.splitter {
   display: flex;
@@ -99,18 +100,17 @@ body #container main.calculator .calculation .percentage-container ul li button 
   color: #ffffff;
   background-color: #00494d;
 }
-body #container main.calculator .calculation .percentage-container ul li button:hover {
-  background-color: #26c0ab;
-  color: #00494d;
-}
-body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button {
+body #container main.calculator .calculation .percentage-container ul li button.custom {
   background-color: #f4fafb;
   color: #547878;
 }
-body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button:hover,
-body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button:active,
-body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button:focus,
-body #container main.calculator .calculation .percentage-container ul li:nth-child(6) > button:focus-visible {
+body #container main.calculator .calculation .percentage-container ul li button.custom.active,
+body #container main.calculator .calculation .percentage-container ul li button.custom:hover {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+body #container main.calculator .calculation .percentage-container ul li button.active,
+body #container main.calculator .calculation .percentage-container ul li button:hover {
   background-color: #26c0ab;
   color: #00494d;
 }
@@ -165,6 +165,9 @@ body #container main.calculator .result button:disabled {
   color: #085c61;
   background-color: #0d686d;
 }
+body #container main.calculator .result button:disabled:hover {
+  background-color: #0d686d;
+}
 body #container main.calculator .result button:hover {
   background-color: #9fe8df;
 }
@@ -198,6 +201,8 @@ body #container input {
   border: none;
   text-align: right;
   font-size: 24px;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
 }
 body #container input:hover,
 body #container input:active,
@@ -206,6 +211,14 @@ body #container input:focus-visible {
   border: none;
   outline: none;
   cursor: pointer;
+}
+body #container input::-webkit-outer-spin-button,
+body #container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body #container input[type='number'] {
+  -moz-appearance: textfield;
 }
 body #container button {
   border: none;
@@ -219,4 +232,40 @@ body #container img.icon {
 }
 body #container img.icon:hover {
   cursor: pointer;
+}
+@media (min-width: 450px) {
+  body #container main.calculator {
+    padding: 3rem 5rem;
+    max-width: 38rem;
+  }
+  body #container main.calculator .calculation .percentage-container ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  body #container {
+    gap: 5rem;
+  }
+  body #container main.calculator {
+    padding: 2rem;
+    max-width: 57.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  body #container main.calculator .calculation .percentage-container ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body #container main.calculator .result {
+    padding: 2rem;
+  }
+  body #container main.calculator .result .sums {
+    flex-grow: 1;
+  }
+  body #container main.calculator .result .sums .tip > p,
+  body #container main.calculator .result .sums .total > p {
+    font-size: 46px;
+    line-height: 71px;
+    letter-spacing: -1px;
+  }
 }

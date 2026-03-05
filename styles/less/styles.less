@@ -71,7 +71,6 @@ html {
 
 body {
   // TODO: uncomment this for better
-  // padding: 2rem 0;
   min-height: 100vh;
   gap: 2rem;
 
@@ -95,6 +94,7 @@ body {
   #container {
     width: 100%;
     gap: 2rem;
+    padding: 2rem;
 
     header.splitter {
       display: flex;
@@ -138,21 +138,19 @@ body {
                 color: @white;
                 background-color: @green-900;
 
-                &:hover {
-                  background-color: @green-400;
-                  color: @green-900;
+                &.custom {
+                  background-color: @grey-50;
+                  color: @grey-550;
+
+                  &.active,
+                  &:hover {
+                    background-color: @green-400;
+                    color: @green-900;
+                  }
                 }
-              }
 
-              &:nth-child(6) > button {
-                background-color: @grey-50;
-                color: @grey-550;
-
-                // TODO: add hover effects on the custom button
-                &:hover,
-                &:active,
-                &:focus,
-                &:focus-visible {
+                &.active,
+                &:hover {
                   background-color: @green-400;
                   color: @green-900;
                 }
@@ -223,6 +221,10 @@ body {
           &:disabled {
             color: @green-800;
             background-color: @green-750;
+
+            &:hover {
+              background-color: @green-750;
+            }
           }
 
           &:hover {
@@ -276,6 +278,19 @@ body {
         outline: none;
         cursor: pointer;
       }
+
+      // * Remove the scrollbar from the input fields
+      /* Chrome, Safari, Edge, Opera */
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      &[type='number'] {
+        -moz-appearance: textfield;
+      }
     }
 
     button {
@@ -292,6 +307,65 @@ body {
 
       &:hover {
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 450px) {
+  body {
+    #container {
+      main.calculator {
+        padding: 3rem 5rem;
+        max-width: 38rem;
+
+        .calculation {
+          .percentage-container {
+            ul {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    #container {
+      gap: 5rem;
+
+      main.calculator {
+        padding: 2rem;
+        max-width: 57.5rem;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+
+        .calculation {
+          .percentage-container {
+            ul {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+        }
+
+        .result {
+          padding: 2rem;
+
+          .sums {
+            flex-grow: 1;
+
+            .tip > p,
+            .total > p {
+              font-size: @tp1-size;
+              line-height: @tp1-l-height;
+              letter-spacing: @tp1-l-spacing;
+            }
+          }
+        }
       }
     }
   }
