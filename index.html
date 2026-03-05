@@ -3,21 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <link rel="stylesheet" href="/styles/css/styles.css" />
-    <script src="scripts/main.js" defer></script>
-
+    <script src="scripts/main.js" defer type="module"></script>
     <title>Frontend Mentor | Tip calculator app</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
         font-size: 11px;
@@ -45,7 +39,16 @@
                   alt=""
                   draggable="false"
               /></label>
-              <input type="text" name="bill" id="bill" placeholder="0" />
+              <!-- !! NEW THING - **onmousewheel to disable the scroll inside the inputs of type number -->
+              <input
+                type="number"
+                name="bill"
+                id="bill"
+                placeholder="0"
+                min="0"
+                onmousewheel="return false;"
+                class="floating-value"
+              />
             </div>
           </div>
           <div class="percentage-container">
@@ -67,7 +70,9 @@
                 <button type="button" class="btn percentage-btn">50%</button>
               </li>
               <li>
-                <button type="button" class="btn percentage-btn">Custom</button>
+                <button type="button" class="btn percentage-btn custom">
+                  Custom
+                </button>
               </li>
             </ul>
           </div>
@@ -83,10 +88,13 @@
                   draggable="false"
               /></label>
               <input
-                type="text"
+                type="number"
                 name="custom-percentage"
                 id="custom-percentage"
                 placeholder="0"
+                min="0"
+                onmousewheel="return false;"
+                class="floating-value"
               />
             </div>
           </div>
@@ -103,10 +111,13 @@
                   draggable="false"
               /></label>
               <input
-                type="text"
+                type="number"
                 name="number-ppl"
                 id="number-ppl"
                 placeholder="0"
+                min="1"
+                onmousewheel="return false;"
+                class="absolute-value"
               />
             </div>
           </div>
@@ -119,7 +130,7 @@
                 <p>Tip Amount</p>
                 <p>/ person</p>
               </div>
-              <p class="tip-sum">$0.00</p>
+              <p class="tip-sum">$<span>0.00</span></p>
             </div>
 
             <div class="total">
@@ -127,12 +138,11 @@
                 <p>Total</p>
                 <p>/ person</p>
               </div>
-              <p class="total-sum">$0.00</p>
+              <p class="total-sum">$<span>0.00</span></p>
             </div>
           </div>
 
-          <button type="button">Reset</button>
-          <!-- <button type="button" disabled>Reset</button> -->
+          <button type="button" class="btn reset-btn" disabled>Reset</button>
         </div>
       </main>
     </div>
