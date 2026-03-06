@@ -167,6 +167,7 @@ body #container main.calculator .result button:disabled {
 }
 body #container main.calculator .result button:disabled:hover {
   background-color: #0d686d;
+  cursor: default;
 }
 body #container main.calculator .result button:hover {
   background-color: #9fe8df;
@@ -233,7 +234,7 @@ body #container img.icon {
 body #container img.icon:hover {
   cursor: pointer;
 }
-@media (min-width: 450px) {
+@media (min-width: 550px) {
   body #container main.calculator {
     padding: 3rem 5rem;
     max-width: 38rem;
