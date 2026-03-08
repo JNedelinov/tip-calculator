@@ -36,7 +36,7 @@ const clearErrorSuccessClasses = () => {
 
 const clearAllUserMessages = () => {
   document
-    .querySelectorAll('usr.msg')
+    .querySelectorAll('.usr-msg')
     .forEach((usrMsgEl) => (usrMsgEl.textContent = ''));
 };
 
