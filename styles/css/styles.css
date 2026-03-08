@@ -100,12 +100,12 @@ body #container main.calculator .calculation .percentage-container ul li button 
   color: #ffffff;
   background-color: #00494d;
 }
-body #container main.calculator .calculation .percentage-container ul li button.custom {
+body #container main.calculator .calculation .percentage-container ul li button.custom-btn {
   background-color: #f4fafb;
   color: #547878;
 }
-body #container main.calculator .calculation .percentage-container ul li button.custom.active,
-body #container main.calculator .calculation .percentage-container ul li button.custom:hover {
+body #container main.calculator .calculation .percentage-container ul li button.custom-btn.active,
+body #container main.calculator .calculation .percentage-container ul li button.custom-btn:hover {
   background-color: #26c0ab;
   color: #00494d;
 }
