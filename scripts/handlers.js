@@ -132,7 +132,6 @@ const handleOnInputKeypress = (e) => {
 
 const handleOnInputChange = (e) => {
   const input = e.target;
-  console.log(input.id);
   const labelContainer = [
     ...document.querySelectorAll('.label-container'),
   ].filter((container) => container.querySelector(`label[for=${input.id}]`))[0];
