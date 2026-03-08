@@ -162,12 +162,7 @@ const handleOnInputChange = (e) => {
 
         if (value === 0) {
           recalc(state);
-          disableBtn(resetButton);
           return;
-        }
-
-        if (resetButton.disabled) {
-          enableBtn(resetButton);
         }
       }
       break;
@@ -181,6 +176,16 @@ const handleOnInputChange = (e) => {
         state.percentage = value;
       }
       break;
+  }
+
+  const { bill, numberOfPpl, percentage } = state;
+
+  if (bill > 0 || numberOfPpl > 0 || percentage > 0) {
+    enableBtn(resetButton);
+  }
+
+  if (bill === 0 && numberOfPpl <= 1 && percentage === 0) {
+    disableBtn(resetButton);
   }
 
   recalc(state);
