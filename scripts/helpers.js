@@ -2,9 +2,6 @@ const resetInputValues = (inputs) =>
   inputs.forEach((input) => (input.value = ''));
 const resetNumericFields = (fields) =>
   fields.forEach((field) => (field.textContent = '0.00'));
-const resetState = (state, initialState) => {
-  state = { ...initialState };
-};
 
 const hideContainer = (container) => container.classList.add('hidden');
 const showContainer = (container) => container.classList.remove('hidden');
@@ -25,12 +22,16 @@ const activateButton = (targetBtn, state) => {
   state.currentlyActiveBtn = targetBtn;
 };
 
+const enableBtn = (btn) => {
+  btn.disabled = false;
+};
+
 const disableBtn = (btn) => {
   btn.disabled = true;
 };
 
-const calculateTotal = (bill = 0, tip = 0, amountOfPeople = 1) =>
-  (bill + tip) / amountOfPeople;
+const calculateTotal = (bill = 0, tipPercentage = 0, amountOfPeople = 1) =>
+  (bill + bill * (tipPercentage / 100)) / amountOfPeople;
 
 const calculateTip = (bill = 0, tipPercentage = 0, amountOfPeople = 1) =>
   (bill * (tipPercentage / 100)) / amountOfPeople;
@@ -42,11 +43,11 @@ const populateNumericField = (field, number = 0) => {
 export default {
   resetInputValues,
   resetNumericFields,
-  resetState,
   hideContainer,
   showContainer,
   activateButton,
   deactivateButton,
+  enableBtn,
   disableBtn,
   calculateTip,
   calculateTotal,
