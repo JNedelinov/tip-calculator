@@ -60,7 +60,7 @@ body #container {
 body #container {
   width: 100%;
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 body #container header.splitter {
   display: flex;
@@ -231,10 +231,10 @@ body #container img.icon {
 body #container img.icon:hover {
   cursor: pointer;
 }
-body .error {
+body .input-container.error {
   border: 2px solid #e17052;
 }
-body .success {
+body .input-container.success {
   border: 2px solid #26c0ab;
 }
 body .label-container {
@@ -243,10 +243,16 @@ body .label-container {
   justify-content: space-between;
   align-items: center;
 }
-body .label-container .usr-msg {
+body .label-container .usr-msg.error {
+  color: #e17052;
+}
+body .label-container .usr-msg.success {
   color: #e17052;
 }
 @media (min-width: 550px) {
+  body #container {
+    padding: 2rem;
+  }
   body #container main.calculator {
     padding: 3rem 5rem;
     max-width: 38rem;

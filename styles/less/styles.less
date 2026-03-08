@@ -94,7 +94,7 @@ body {
   #container {
     width: 100%;
     gap: 2rem;
-    padding: 2rem;
+    padding: 2rem 0;
 
     header.splitter {
       display: flex;
@@ -328,7 +328,7 @@ body {
     }
 
     .usr-msg.success {
-      color: @orange-400;
+      color: @orange-200;
     }
   }
 }
@@ -336,6 +336,8 @@ body {
 @media (min-width: 550px) {
   body {
     #container {
+      padding: 2rem;
+      
       main.calculator {
         padding: 3rem 5rem;
         max-width: 38rem;
