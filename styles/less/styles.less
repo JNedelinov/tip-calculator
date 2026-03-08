@@ -251,10 +251,6 @@ body {
       display: block;
     }
 
-    .main-label {
-      margin-bottom: 0.5rem;
-    }
-
     input,
     button {
       font-family: @font-family;
@@ -309,6 +305,30 @@ body {
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+
+  .input-container.error {
+    border: 2px solid @orange-200;
+  }
+
+  .input-container.success {
+    border: 2px solid @green-400;
+  }
+
+  .label-container {
+    margin-bottom: 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .usr-msg.error {
+      color: @orange-200;
+    }
+
+    .usr-msg.success {
+      color: @orange-400;
     }
   }
 }

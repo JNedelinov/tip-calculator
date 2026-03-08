@@ -185,9 +185,6 @@ body #container main.calculator .input-container label {
 body #container label {
   display: block;
 }
-body #container .main-label {
-  margin-bottom: 0.5rem;
-}
 body #container input,
 body #container button {
   font-family: 'Space Mono', monospace;
@@ -233,6 +230,21 @@ body #container img.icon {
 }
 body #container img.icon:hover {
   cursor: pointer;
+}
+body .error {
+  border: 2px solid #e17052;
+}
+body .success {
+  border: 2px solid #26c0ab;
+}
+body .label-container {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .label-container .usr-msg {
+  color: #e17052;
 }
 @media (min-width: 550px) {
   body #container main.calculator {

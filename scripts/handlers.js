@@ -2,7 +2,13 @@ import { state, resetState } from './state.js';
 import ui from './ui.js';
 import helpers from './helpers.js';
 
-const { resetButton, customPercentageContainer, recalc } = ui;
+const {
+  resetButton,
+  customPercentageContainer,
+  recalc,
+  clearErrorSuccessClasses,
+  clearAllUserMessages,
+} = ui;
 const {
   resetInputValues,
   resetNumericFields,
@@ -20,6 +26,12 @@ const handleResetBtnClick = () => {
   resetNumericFields(document.querySelectorAll('span.numeric'));
   // hide the custom percentage input's container
   hideContainer(document.querySelector('.custom-percentage-container'));
+
+  // clear all success and error classes from all elements that contain them
+  clearErrorSuccessClasses();
+
+  // clear all user messages
+  clearAllUserMessages();
 
   // deactivate the button
   deactivateButton(state);
@@ -120,9 +132,24 @@ const handleOnInputKeypress = (e) => {
 
 const handleOnInputChange = (e) => {
   const input = e.target;
+  console.log(input.id);
+  const labelContainer = [
+    ...document.querySelectorAll('.label-container'),
+  ].filter((container) => container.querySelector(`label[for=${input.id}]`))[0];
+  const usrMsg = labelContainer.querySelector('.usr-msg');
+
   if (+input.value === 0 && input.classList.contains('absolute-value')) {
     e.preventDefault();
-    input.value = 1;
+    input.value = '';
+    input.parentElement.classList.remove('success');
+    input.parentElement.classList.add('error');
+
+    usrMsg.textContent = "Can't be zero";
+  } else if (input.parentElement.classList.contains('error')) {
+    input.parentElement.classList.remove('error');
+    input.parentElement.classList.add('success');
+
+    usrMsg.textContent = '';
   }
 
   input.value = +input.value;
@@ -147,7 +174,7 @@ const handleOnInputChange = (e) => {
       break;
     case 'number-ppl':
       {
-        state.numberOfPpl = value;
+        state.numberOfPpl = value || 1;
       }
       break;
     case 'custom-percentage':

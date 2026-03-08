@@ -25,6 +25,21 @@ const recalc = (state) => {
   populateNumericField(totalSum, total);
 };
 
+const clearErrorSuccessClasses = () => {
+  document
+    .querySelectorAll('.success')
+    .forEach((successEl) => successEl.classList.remove('success'));
+  document
+    .querySelectorAll('.error')
+    .forEach((successEl) => successEl.classList.remove('error'));
+};
+
+const clearAllUserMessages = () => {
+  document
+    .querySelectorAll('usr.msg')
+    .forEach((usrMsgEl) => (usrMsgEl.textContent = ''));
+};
+
 export default {
   inputs,
   resetButton,
@@ -32,20 +47,6 @@ export default {
   customPercentageBtn,
   customPercentageContainer,
   recalc,
+  clearErrorSuccessClasses,
+  clearAllUserMessages,
 };
-
-/* 
-
-bakshish - 50% => 50$
-bill - 100$
-total = 150
-
--- 
-
-bakshish 50 / 2 = 25
-bill / 2 = 50
-totalPerPerson = 75
-
-100 + (100 * )
-
-*/
