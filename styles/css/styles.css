@@ -243,10 +243,7 @@ body .label-container {
   justify-content: space-between;
   align-items: center;
 }
-body .label-container .usr-msg.error {
-  color: #e17052;
-}
-body .label-container .usr-msg.success {
+body .label-container .usr-msg {
   color: #e17052;
 }
 @media (min-width: 550px) {
