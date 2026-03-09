@@ -85,6 +85,9 @@ body #container main.calculator .calculation {
 body #container main.calculator .calculation .percentage-container {
   width: 100%;
 }
+body #container main.calculator .calculation .percentage-container > p {
+  margin-bottom: 0.5rem;
+}
 body #container main.calculator .calculation .percentage-container ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
